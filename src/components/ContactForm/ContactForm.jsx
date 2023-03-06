@@ -1,6 +1,6 @@
 import { Formik, Form, ErrorMessage } from 'formik';
 import { nanoid } from 'nanoid';
-import { object, string, number } from 'yup';
+// import { object, string, number } from 'yup';
 import PropTypes from 'prop-types';
 import { Field, Button } from './ContactForm.styled';
 
@@ -10,15 +10,15 @@ export const ContactForm = ({ onSubmit }) => {
     number: '',
   };
 
-  const schema = object({
-    name: string().min(1).required(),
-    number: number().min(7).max(8).required(),
-  });
+  // const schema = object({
+  //   name: string().min(1).required(),
+  //   number: number().min(7).max(8).required(),
+  // });
 
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={schema}
+      // validationSchema={schema}
       onSubmit={(values, actions) => {
         onSubmit({
           ...values,
